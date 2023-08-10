@@ -25,15 +25,15 @@ def test_import(import_data):
     Test data import, checking for a non-zero number or rows and columns.
     '''
     try:
-        churn_df = import_data("./data/bank_data.csv")
+        df = import_data("./data/bank_data.csv")
         logging.info("Testing import_data: SUCCESS")
     except FileNotFoundError as err:
-        logging.error("Testing import_eda: ERROR - The file wasn't found")
+        logging.error("Testing import_data: ERROR - The file wasn't found")
         raise err
 
     try:
-        assert churn_df.shape[0] > 0
-        assert churn_df.shape[1] > 0
+        assert df.shape[0] > 0
+        assert df.shape[1] > 0
     except AssertionError as err:
         logging.error(
             "Testing import_data: ERROR - The file doesn't appear to have rows and columns")
@@ -47,7 +47,6 @@ def test_eda(perform_eda):
     try:
         perform_eda()
         logging.info("Testing perform_eda: SUCCESS")
-
     except Exception as err:
         logging.error("Testing perform_eda: ERROR - type %s", type(err))
         raise err
@@ -68,7 +67,7 @@ def test_encoder_helper(encoder_helper):
     Test encoder helper by checking for the number of encoded columns.
     '''
     try:
-        churn_df = encoder_helper("Churn")
+        df = encoder_helper("Churn")
         logging.info("Testing encoder_helper: SUCCESS")
     except KeyError as err:
         logging.error(
@@ -76,7 +75,7 @@ def test_encoder_helper(encoder_helper):
         raise err
 
     try:
-        assert sum(churn_df.columns.str.contains('_Churn')) == 5
+        assert sum(df.columns.str.contains('_Churn')) == 5
     except AssertionError as err:
         logging.error(
             "Testing encoder_helper: ERROR - Number of encoded columns is incorrect.")
