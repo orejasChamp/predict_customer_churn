@@ -40,10 +40,11 @@ The structure of this project directory tree is displayed as follows:
 ├── models
 │   ├── Logistic_Model.pkl
 │   └── RFC_Model.pkl
+├── LICENSE
+├── README.md
 ├── churn_library.py
 ├── churn_notebook.ipynb
 ├── churn_script_logging_and_tests.py
-├── README.md
 └── requirements_py3.9.txt
 ```
 
