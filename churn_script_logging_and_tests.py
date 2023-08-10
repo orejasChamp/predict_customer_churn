@@ -36,7 +36,7 @@ def test_import(import_data):
         assert churn_df.shape[1] > 0
     except AssertionError as err:
         logging.error(
-            "Testing import_data: Error - The file doesn't appear to have rows and columns")
+            "Testing import_data: ERROR - The file doesn't appear to have rows and columns")
         raise err
 
 
