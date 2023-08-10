@@ -102,8 +102,7 @@ Testing any changes or customizations to the `churn_library.py` file can be done
 ipython churn_script_logging_and_tests.py
 ```
 
-### Cleaning up your code
-
+### Code Cleaning
 This code complies with `PEP 8` rules. To check it automatically, run pylint on the terminal and see the score of each file:
 
 ```
