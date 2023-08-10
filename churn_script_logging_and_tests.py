@@ -118,8 +118,6 @@ def test_train_models(train_models):
 
 if __name__ == "__main__":
     MODEL = Model()
-    PATH = './data/bank_data.csv'
-    RESPONSE = 'Churn'
     test_import(MODEL.import_data)
     test_eda(MODEL.perform_eda)
     test_encoder_helper(MODEL.encoder_helper)
